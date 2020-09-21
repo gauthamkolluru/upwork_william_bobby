@@ -1,6 +1,7 @@
 __pycache__/
 .vscode
-*.json
+*.exe
+**/*.exe
 **/*.json
 *.pickle
 **/*.pickle
