@@ -1,0 +1,10 @@
+__pycache__/
+.vscode
+*.json
+**/*.json
+*.pickle
+**/*.pickle
+rough.py
+**/rough.py
+sample.py
+**/sample.py
