@@ -1,0 +1,19 @@
+{
+	"steps": {
+		"1": {
+			"element": "dropdown",
+			"name": "combox_doc_doctype",
+			"option": "Mortgage"
+		},
+		"3": {
+			"element": "dropdown",
+			"name": "borough",
+			"option": "ALL BOROUGHS"
+		},
+		"2": {
+			"element": "dropdown",
+			"name": "cmb_date",
+			"option": "Last 7 days"
+		}
+	}
+}

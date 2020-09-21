@@ -2,7 +2,6 @@ __pycache__/
 .vscode
 *.exe
 **/*.exe
-**/*.json
 *.pickle
 **/*.pickle
 rough.py
