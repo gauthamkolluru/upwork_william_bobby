@@ -1,11 +1,16 @@
 import time
 import json
+from datetime import date, datetime, timedelta
+
+import requests
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 
 __author__ = 'Gautham Kolluru'
+
+START_DATE = date.today()-timedelta(days=1)
 
 URLS = [
     'https://a836-acris.nyc.gov/DS/DocumentSearch/DocumentType',
@@ -24,6 +29,26 @@ def read_json(fn=JFN):
     return fi
 
 
+def read_date_from_string(string_date):
+    return datetime.strptime(string_date, "%m-%d-%Y").date()
+
+
+def get_no_of_days(start_date, end_date):
+    return (end_date - start_date).days
+
+
+def historical_dates(start_date=START_DATE, end_date=date.today()):
+    while get_no_of_days(start_date, end_date) > 0:
+        if get_no_of_days(start_date, end_date) > 31:
+            yield start_date, start_date + timedelta(days=31)
+            start_date += timedelta(days=31)
+        else:
+            yield start_date, end_date
+            start_date += timedelta(days=get_no_of_days(start_date, end_date))
+    else:
+        return False
+
+
 def get_urls():
     for url in URLS:
         yield url
@@ -33,7 +58,7 @@ def get_driver():
     return webdriver.Chrome()
 
 
-def dropdown_select(driver, dropdown_id="", dropdown_name="", option_name=""):
+def select_from_dropdown(driver, dropdown_id="", dropdown_name="", option_name=""):
     if dropdown_id:
         dd = driver.find_element_by_id(dropdown_id)
     elif dropdown_name:
@@ -58,7 +83,7 @@ def main():
             driver = get_driver()
             driver.get(url)
             # ji : json input
-            ji = sort_dict(read_json()['steps'])
+            ji = sort_dict(read_json())
             for step in ji:
                 dropdown_id = ""
                 dropdown_name = ""
@@ -70,8 +95,8 @@ def main():
                         dropdown_name = ji[step]['name']
                     if "option" in ji[step]:
                         option_name = ji[step]['option']
-                    dropdown_select(driver=driver, dropdown_id=dropdown_id,
-                                    dropdown_name=dropdown_name, option_name=option_name)
+                    select_from_dropdown(driver=driver, dropdown_id=dropdown_id,
+                                         dropdown_name=dropdown_name, option_name=option_name)
         except Exception as e:
             print(e)
         finally:
