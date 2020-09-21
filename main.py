@@ -22,7 +22,7 @@ PROXIES = []
 JFN = "navigation.json"
 
 
-def read_json(fn=JFN):
+def read_json(fn):
     with open(fn) as fp:
         # file info
         fi = json.load(fp)
@@ -73,34 +73,47 @@ def select_from_dropdown(driver, dropdown_id="", dropdown_name="", option_name="
     return False
 
 
-def sort_dict(d):
-    return {k: v for k, v in sorted(d['steps'].items())}
+def sort_dict_values(d) -> list:
+    return [v for k, v in sorted(d.items())]
+
+
+def is_blocked(url, proxyDict={}):
+    return 200 <= requests.get(url=url, proxies=proxyDict) < 300
 
 
 def main():
-    for url in get_urls():
-        try:
-            driver = get_driver()
-            driver.get(url)
-            # ji : json input
-            ji = sort_dict(read_json())
-            for step in ji:
-                dropdown_id = ""
-                dropdown_name = ""
-                option_name = ""
-                if ji[step]['element'].lower().strip() == "dropdown":
-                    if "id" in ji[step]:
-                        dropdown_id = ji[step]['id']
-                    elif "name" in ji[step]:
-                        dropdown_name = ji[step]['name']
-                    if "option" in ji[step]:
-                        option_name = ji[step]['option']
-                    select_from_dropdown(driver=driver, dropdown_id=dropdown_id,
-                                         dropdown_name=dropdown_name, option_name=option_name)
-        except Exception as e:
-            print(e)
-        finally:
-            driver.close()
+    try:
+        jd = read_json(JFN)
+        if jd:
+            urls = jd["urls"]
+            proxies = jd["proxies"]
+            steps = sort_dict_values(jd["steps"])
+
+            for url in urls:
+
+                # for proxy in proxies:
+                #     if not is_blocked(proxy, url):
+                #         break
+                # else:
+                #     raise("All Proxies Blocked!")
+
+                driver = get_driver()
+                driver.get(url)
+
+                for step in steps:
+
+                    if step["xpath"]:
+                        step_xpath = step["xpath"]
+                    elif step["id"]:
+                        step_id = step["id"]
+                    elif step["name"]:
+                        step_name = step["name"]
+                    print(step_name or step_xpath or step_id)
+
+    except Exception as e:
+        print(e)
+    finally:
+        driver.close()
     return True
 
 

@@ -1,64 +1,84 @@
 {
+	"urls": ["https://a836-acris.nyc.gov/DS/DocumentSearch/DocumentType"],
+	"proxies": [""],
 	"steps": {
 		"1": {
 			"element": "select",
-			"type": "dropdown",
 			"name": "combox_doc_doctype",
-			"option": "Mortgage"
+			"id": "",
+			"xpath": "",
+			"value": "Mortgage",
+			"additional_specifier": ""
 		},
 		"2": {
 			"element": "select",
-			"type": "dropdown",
 			"name": "cmb_date",
-			"option": "Specific Date Range"
+			"id": "",
+			"xpath": "",
+			"value": "Specific Date Range",
+			"additional_specifier": ""
 		},
 		"3": {
 			"element": "input",
-			"type": "text",
-			"option": {
-				"1": {
-					"element": "input",
-					"type": "text",
-					"name": "edt_fromm",
-					"option": ""
-				},
-				"2": {
-					"element": "input",
-					"type": "text",
-					"name": "edt_fromd",
-					"option": ""
-				},
-				"3": {
-					"element": "input",
-					"type": "text",
-					"name": "edt_fromy",
-					"option": ""
-				},
-				"4": {
-					"element": "input",
-					"type": "text",
-					"name": "edt_tom",
-					"option": ""
-				},
-				"5": {
-					"element": "input",
-					"type": "text",
-					"name": "edt_tod",
-					"option": ""
-				},
-				"6": {
-					"element": "input",
-					"type": "text",
-					"name": "edt_toy",
-					"option": ""
-				}
-			}
+			"name": "edt_fromm",
+			"id": "",
+			"xpath": "",
+			"type": "",
+			"value": "",
+			"additional_specifier": "month"
+		},
+		"4": {
+			"element": "input",
+			"name": "edt_fromd",
+			"id": "",
+			"xpath": "",
+			"type": "",
+			"value": "",
+			"additional_specifier": "day"
+		},
+		"5": {
+			"element": "input",
+			"name": "edt_fromy",
+			"id": "",
+			"xpath": "",
+			"type": "",
+			"value": "",
+			"additional_specifier": "year"
+		},
+		"6": {
+			"element": "input",
+			"name": "edt_tom",
+			"id": "",
+			"xpath": "",
+			"type": "",
+			"value": "",
+			"additional_specifier": "month"
+		},
+		"7": {
+			"element": "input",
+			"name": "edt_tod",
+			"id": "",
+			"xpath": "",
+			"type": "",
+			"value": "",
+			"additional_specifier": "day"
+		},
+		"8": {
+			"element": "input",
+			"name": "edt_toy",
+			"id": "",
+			"xpath": "",
+			"type": "",
+			"value": "",
+			"additional_specifier": "year"
 		},
 		"9": {
 			"element": "select",
-			"type": "dropdown",
 			"name": "borough",
-			"option": "ALL BOROUGHS"
+			"id": "",
+			"xpath": "",
+			"value": "ALL BOROUGHS",
+			"additional_specifier": ""
 		}
 	}
 }
