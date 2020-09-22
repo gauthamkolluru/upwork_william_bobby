@@ -38,15 +38,10 @@ def get_no_of_days(start_date, end_date):
 
 
 def historical_dates(start_date=START_DATE, end_date=date.today()):
-    while get_no_of_days(start_date, end_date) > 0:
-        if get_no_of_days(start_date, end_date) > 31:
-            yield start_date, start_date + timedelta(days=31)
-            start_date += timedelta(days=31)
-        else:
-            yield start_date, end_date
-            start_date += timedelta(days=get_no_of_days(start_date, end_date))
-    else:
-        return False
+    while get_no_of_days(start_date, end_date) > 31:
+        yield start_date, start_date + timedelta(days=31)
+        start_date += timedelta(days=31)
+    yield start_date, end_date
 
 
 def get_urls():
