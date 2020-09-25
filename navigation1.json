@@ -1,0 +1,34 @@
+{
+	"url": "https://pypi.org",
+	"proxies": [
+		"",
+		"elykbngr-dest:qe71uz6cqnlj@209.127.191.180:80",
+		"elykbngr-dest:qe71uz6cqnlj@45.95.96.132:80",
+		"elykbngr-dest:qe71uz6cqnlj@45.95.96.237:80",
+		"elykbngr-dest:qe71uz6cqnlj@45.95.96.187:80"
+	],
+	"steps": {
+		"1": {
+			"element": "input",
+			"tag_name": "input",
+			"name": "q",
+			"element_id": "",
+			"class_name": "",
+			"type_name": "",
+			"xpath": "",
+			"value": "Selenium",
+			"multiple": false
+		},
+		"2": {
+			"element": "button",
+			"tag_name": "button",
+			"name": "",
+			"element_id": "",
+			"class_name": "",
+			"type_name": "submit",
+			"xpath": "",
+			"value": "",
+			"multiple": false
+		}
+	}
+}

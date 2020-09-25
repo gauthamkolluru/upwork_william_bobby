@@ -1,0 +1,123 @@
+{
+	"url": "https://press.co.burlington.nj.us/Press/Clerk/ClerkHome.aspx?op=basic",
+	"steps": {
+		"1": {
+			"tag_name": "a",
+			"value": "DEED",
+			"multiple": true,
+			"title": "by document type",
+			"click": true
+		},
+		"2": {
+			"tag_name": "select",
+			"id": "ctl00_ContentPlaceHolder1_ddlDocTypeTab2",
+			"value": "DEED",
+			"multiple": false,
+			"click": false
+		},
+		"3": {
+			"tag_name": "input",
+			"id": "ctl00_ContentPlaceHolder1_txtFromTab2",
+			"date": true,
+			"from": true,
+			"multiple": false,
+			"click": false
+		},
+		"4": {
+			"tag_name": "input",
+			"id": "ctl00_ContentPlaceHolder1_txtToTab2",
+			"date": true,
+			"from": false,
+			"multiple": false,
+			"click": false
+		},
+		"5": {
+			"tag_name": "select",
+			"id": "ctl00_ContentPlaceHolder1_ddlTotalRecTab2",
+			"value": "2000",
+			"multiple": false,
+			"click": false
+		},
+		"6": {
+			"tag_name": "",
+			"id": "ctl00_ContentPlaceHolder1_btnSearchTab2",
+			"value": "",
+			"multiple": false,
+			"click": true
+		},
+		"7": {
+			"tag_name": "a",
+			"value": "",
+			"multiple": true,
+			"click": true
+		},
+		"8": {
+			"tag_name": "a",
+			"value": "",
+			"multiple": true,
+			"click": true
+		},
+		"9": {
+			"id": "ctl00_ContentPlaceHolder1_ifrmElection",
+			"value": "",
+			"switch": true,
+			"multiple": false,
+			"click": false
+		},
+		"10": {
+			"id": "InstViewerHeadFrame",
+			"value": "",
+			"switch": true,
+			"multiple": false,
+			"click": false
+		},
+		"11": {
+			"id": "frmNavigate",
+			"value": "",
+			"switch": false,
+			"multiple": false,
+			"click": false
+		},
+		"12": {
+			"id": "btnImage",
+			"value": "",
+			"switch": false,
+			"multiple": false,
+			"click": true
+		},
+		"13": {
+			"id": "dgdDoc",
+			"value": "",
+			"switch": false,
+			"multiple": false,
+			"click": false
+		},
+		"14": {
+			"tag_name": "tr",
+			"value": "",
+			"switch": false,
+			"multiple": true,
+			"click": false
+		},
+		"15": {
+			"switch": true,
+			"parent": true,
+			"multiple": false,
+			"click": false
+		},
+		"16": {
+			"id": "InstViewerBodyFrame",
+			"value": "",
+			"switch": true,
+			"multiple": false,
+			"click": false
+		},
+		"17": {
+			"id": "Button_SaveImage",
+			"value": "",
+			"switch": false,
+			"multiple": false,
+			"click": false
+		}
+	}
+}

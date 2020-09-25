@@ -1,0 +1,16 @@
+<a href="javascript:void(null);" title="By Document Type">By Document Type</a>
+
+
+<select name="ctl00$ContentPlaceHolder1$ddlTotalRecTab2" id="ctl00_ContentPlaceHolder1_ddlTotalRecTab2" class="BigDropDownStyle" style="width:100px;">
+	<option selected="selected" value="500">500</option>
+	<option value="1000">1000</option>
+	<option value="2000">2000</option>
+
+</select>
+
+<input type="submit" name="ctl00$ContentPlaceHolder1$btnSearchTab2" value="Search" onclick="return CheckSubmit(this);" id="ctl00_ContentPlaceHolder1_btnSearchTab2" class="ButtonStyle" style="width:180px;">
+
+<input type="image" name="ctl00$ContentPlaceHolder1$dgdDeedMort$ctl03$btnView" id="ctl00_ContentPlaceHolder1_dgdDeedMort_ctl03_btnView" class="CenterAlign" src="/Press/App_Themes/BurlingtonPress/Images/View.png" style="border-width:0px;">
+
+
+<td style="height: 20px" colspan="2"></td>
